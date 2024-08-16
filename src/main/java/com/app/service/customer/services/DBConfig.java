@@ -21,7 +21,9 @@ import com.app.service.customer.repositories.RatingRepository;
 import com.app.service.customer.repositories.StateRepository;
 
 import jakarta.annotation.PostConstruct;
-
+/**
+ * fetches the states,customerTypes, gstnTypes,creditStatuses,ratings,greetings on bean initialization
+ */
 @Configuration
 public class DBConfig {
 	@Autowired
@@ -67,7 +69,10 @@ public class DBConfig {
 	}
 
 	private Map<String, UUID> greetings;
-
+	
+	/**
+	 * On bean initialization fetches customerTypes,states,creditstatuses,gstnTypes,greetings,ratings and creates a map of names and Ids
+	 */
 	@PostConstruct
 	public void init() {
 		statesMap = stateRepository.findAll().stream()

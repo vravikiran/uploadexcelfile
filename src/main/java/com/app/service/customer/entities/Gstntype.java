@@ -6,6 +6,10 @@ import java.util.UUID;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+/**
+ * GstnType entity
+ */
+
 @Entity
 public class Gstntype {
 	@Id

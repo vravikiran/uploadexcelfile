@@ -6,7 +6,9 @@ import com.app.service.customer.services.DBConfig;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-
+/**
+ * checks if the creditstatus is valid or not
+ */
 public class CreditStatusValidator implements ConstraintValidator<IsValidCreditStatus, String> {
 	
 	@Autowired

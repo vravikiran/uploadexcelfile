@@ -5,6 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import com.app.service.customer.entities.Greeting;
 import java.util.UUID;
+/**
+ * Repository for Greeting
+ */
 @Repository
 public interface GreetingRepository extends JpaRepository<Greeting, UUID> {
 

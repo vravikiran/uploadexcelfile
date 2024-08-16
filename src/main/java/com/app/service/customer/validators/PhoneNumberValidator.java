@@ -2,7 +2,9 @@ package com.app.service.customer.validators;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-
+/**
+ * Checks given phone number is valid
+ */
 public class PhoneNumberValidator  implements ConstraintValidator<IsValidPhoneNumber, Long>{
 
 	@Override

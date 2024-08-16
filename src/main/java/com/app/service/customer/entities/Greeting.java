@@ -5,7 +5,9 @@ import java.util.UUID;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-
+/**
+ * Greeting entity
+ */
 @Entity
 public class Greeting {
 	@Id

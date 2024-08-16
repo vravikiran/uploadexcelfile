@@ -5,7 +5,9 @@ import java.util.UUID;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-
+/**
+ * CustomerType entity
+ */
 @Entity
 public class Customertype {
 	@Id

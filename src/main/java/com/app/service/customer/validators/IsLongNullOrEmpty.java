@@ -8,7 +8,9 @@ import java.lang.annotation.Target;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
-
+/**
+ * annotation to check given long value is null or empty
+ */
 @Target({ ElementType.FIELD })
 @Retention(value = RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = LongValueValidator.class)

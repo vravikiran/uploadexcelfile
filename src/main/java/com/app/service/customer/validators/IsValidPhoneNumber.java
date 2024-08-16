@@ -8,7 +8,9 @@ import java.lang.annotation.Target;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
-
+/**
+ * Annotation to check given phoneNumber is valid
+ */
 @Target({ ElementType.FIELD })
 @Retention(value = RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = PhoneNumberValidator.class)

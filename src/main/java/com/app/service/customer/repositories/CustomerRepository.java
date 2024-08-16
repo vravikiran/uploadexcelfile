@@ -10,7 +10,9 @@ import org.springframework.stereotype.Repository;
 import com.app.service.customer.entities.Customer;
 import com.app.service.customer.entities.CustomerNameDto;
 import com.app.service.customer.entities.GSTINAndPanDto;
-
+/**
+ * Repository for Customer
+ */
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, UUID> {
 	@Query(value = "select customername from Customer where customername= :customerName")

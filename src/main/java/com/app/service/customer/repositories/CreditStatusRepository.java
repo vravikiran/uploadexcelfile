@@ -6,7 +6,9 @@ import org.springframework.stereotype.Repository;
 import com.app.service.customer.entities.Creditstatus;
 
 import java.util.UUID;
-
+/**
+ * Repository for CreditStatus
+ */
 @Repository
 public interface CreditStatusRepository extends JpaRepository<Creditstatus, UUID> {
 

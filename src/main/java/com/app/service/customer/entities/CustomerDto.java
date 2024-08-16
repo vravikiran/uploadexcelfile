@@ -17,6 +17,10 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+/**
+ * DTO POJO for customer
+ */
+
 public class CustomerDto {
 	private int slNo;
 	private String parentCompany;

@@ -6,7 +6,9 @@ import com.app.service.customer.services.DBConfig;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-
+/**
+ * checks given customerType is valid
+ */
 public class CustomerTypeValidator implements ConstraintValidator<IsValidCustomerType, String> {
 	@Autowired
 	DBConfig dbConfig;

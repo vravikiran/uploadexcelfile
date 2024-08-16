@@ -18,15 +18,22 @@ import com.app.service.customer.enums.GSTNTypeEnum;
 
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validator;
-
+/**
+ * Validates the customer record and returns errors associated with it
+ */
 @Service
 public class CustomerFieldsValidator {
 	@Autowired
 	private Validator validator;
 
 	@Autowired
-	CustomerFieldsByNameValidator customerFieldsByNameValidator;
+	CustomerFieldsByNameService customerFieldsByNameValidator;
 
+	/**
+	 * validates the customer fields
+	 * @param customerDto
+	 * @return
+	 */
 	@Async("validateCustFieldsExecutor")
 	public CompletableFuture<Map<String, String>> validateCustomerDto(CustomerDto customerDto) {
 		Map<String, String> errors = new HashMap<String, String>();

@@ -7,7 +7,9 @@ import java.lang.annotation.Target;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
-
+/**
+ * Annotation to check CreditStatus
+ */
 @Target({ ElementType.FIELD })
 @Retention(value = RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = CreditStatusValidator.class)

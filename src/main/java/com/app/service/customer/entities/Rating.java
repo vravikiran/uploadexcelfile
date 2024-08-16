@@ -5,7 +5,9 @@ import java.util.UUID;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-
+/**
+ * Rating entity
+ */
 @Entity
 public class Rating {
 	@Id

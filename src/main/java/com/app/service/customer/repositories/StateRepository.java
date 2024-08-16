@@ -5,7 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import com.app.service.customer.entities.State;
 import java.util.UUID;
-
+/**
+ * Repository for State
+ */
 @Repository
 public interface StateRepository extends JpaRepository<State, UUID> {
 

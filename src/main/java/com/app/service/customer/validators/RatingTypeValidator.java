@@ -6,7 +6,9 @@ import com.app.service.customer.services.DBConfig;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-
+/**
+ * Checks given rating type is valid
+ */
 public class RatingTypeValidator implements ConstraintValidator<IsValidRatingType, String> {
 	@Autowired
 	DBConfig dbConfig;

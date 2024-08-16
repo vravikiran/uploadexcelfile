@@ -24,7 +24,9 @@ import com.app.service.customer.entities.CustomerDto;
 import com.app.service.customer.enums.CustomerCSVFileHeaders;
 import com.app.service.customer.repositories.BrandRepository;
 import com.app.service.customer.repositories.CustomerRepository;
-
+/**
+ * Reads the contents of uploaded csv file and converts the csv records into customerDtos
+ */
 @Service
 public class CustomerService {
 	@Autowired
@@ -38,6 +40,11 @@ public class CustomerService {
 	@Autowired
 	BrandRepository brandRepository;
 
+	/**
+	 * Reads the rows of csv file and converts them to customerDtos
+	 * @param in
+	 * @throws Exception
+	 */
 	public void uploadCustomerInfo(InputStream in) throws Exception {
 		List<CustomerDto> customerDtos = null;
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
@@ -56,6 +63,11 @@ public class CustomerService {
 		}
 	}
 
+	/**
+	 * converts csvRecord to CustomerDto
+	 * @param csvRecord
+	 * @return
+	 */
 	private CustomerDto convertCsvRecordToCustomerRecord(CSVRecord csvRecord) {
 		CustomerDto customerDto = new CustomerDto();
 		customerDto.setParentCompany(csvRecord.get(CustomerCSVFileHeaders.ParentCompany));
@@ -92,6 +104,16 @@ public class CustomerService {
 		return customerDto;
 	}
 
+	/**
+	 * validates the list of customerDtos and returns a map of errors
+	 * if there are no errors saves all the records into database
+	 * writes the errors associated with the records into a log file
+	 * valid records are persisted into database, invalid records are written to error log file
+	 * @param customerDtos
+	 * @return
+	 * @throws InterruptedException
+	 * @throws ExecutionException
+	 */
 	public boolean validateListOfCustomers(List<CustomerDto> customerDtos)
 			throws InterruptedException, ExecutionException {
 		boolean isValid = false;
@@ -126,6 +148,10 @@ public class CustomerService {
 		return isValid;
 	}
 
+	/**
+	 * Saves the customer records to database
+	 * @param customerDtos
+	 */
 	@Async
 	public void saveCustomerDtos(Set<CustomerDto> customerDtos) {
 		List<CustomerDto> parentCustomerDtos = customerDtos.stream().filter(
@@ -140,6 +166,11 @@ public class CustomerService {
 		customerRepository.saveAll(childCustomers);
 	}
 
+	/**
+	 * converts CustomerDto to Customer object
+	 * @param customerDto
+	 * @return
+	 */
 	public Customer convertcustomerDtoToObj(CustomerDto customerDto) {
 		Customer customer = new Customer();
 		customer.setParentcustomerfk(customerRepository.getParentCustomerId(customerDto.getParentCompany()));

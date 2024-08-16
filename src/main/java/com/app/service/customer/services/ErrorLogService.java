@@ -21,6 +21,12 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+/**
+ * generates an error log file.
+ * writes validation errors for each column of record
+ * writes validation errors for all records in given csv file
+ */
+
 @Service
 public class ErrorLogService {
 	@Async

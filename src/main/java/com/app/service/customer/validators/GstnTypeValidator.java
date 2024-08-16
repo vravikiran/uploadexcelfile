@@ -6,7 +6,9 @@ import com.app.service.customer.services.DBConfig;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-
+/**
+ * Checks given GSTNType is valid
+ */
 public class GstnTypeValidator implements ConstraintValidator<IsValidGstnType, String> {
 	@Autowired
 	DBConfig dbConfig;
